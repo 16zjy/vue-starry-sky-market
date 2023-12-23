@@ -14,50 +14,29 @@
           <img src="@/assets/bg.jpg" draggable="false" alt="图片" />
           <div class="core">
             <div class="title">
-              <h2 v-if="isLogin">账号登陆</h2>
+              <h2 v-if="isLogin">账号登录</h2>
               <h2 v-if="!isLogin">账号注册</h2>
             </div>
             <div class="form" v-if="isLogin" key="1">
-              <el-form
-                status-icon
-                label-width="40px"
-                label-position="left"
-                :model="loginForm"
-                ref="loginForm"
-                :hide-required-asterisk="true"
-              >
-                <el-form-item
-                  label="账号"
-                  prop="username"
-                  :rules="[{ required: true, message: '账号不能为空' }]"
-                >
-                  <el-input
-                    v-model="loginForm.username"
-                    prefix-icon="el-icon-user-solid"
-                  ></el-input>
+              <el-form status-icon label-width="40px" label-position="left" :model="loginForm" ref="loginForm" :hide-required-asterisk="true">
+                <el-form-item label="账号" prop="username" :rules="[{ required: true, message: '账号不能为空' }]">
+                  <el-input v-model="loginForm.username" prefix-icon="el-icon-user-solid"></el-input>
                 </el-form-item>
-                <el-form-item
-                  label="密码"
-                  prop="password"
-                  :rules="[{ required: true, message: '密码不能为空' }]"
-                >
-                  <el-input
-                    type="password"
-                    v-model="loginForm.password"
-                    show-password
-                    prefix-icon="el-icon-lock"
-                  ></el-input>
+
+                <el-form-item label="密码" prop="password" :rules="[{ required: true, message: '密码不能为空' }]">
+                  <el-input type="password" v-model="loginForm.password" show-password prefix-icon="el-icon-lock"></el-input>
                 </el-form-item>
+
                 <el-form-item>
-                  <el-button type="primary" @click="submitLogin('loginForm')"
-                    >登录</el-button
-                  >
+                  <el-button type="primary" @click="submitLogin('loginForm')">登录</el-button>
                   <el-button @click="clear">重置</el-button>
                 </el-form-item>
               </el-form>
               <el-divider></el-divider>
+
               <div class="footer">
-                <div class="loginSelect">
+                <div></div>
+                <!-- <div class="loginSelect">
                   <div class="logo">
                     <span class="icon icon_qq"></span>
                     <span>QQ</span>
@@ -69,7 +48,7 @@
                     <span class="icon icon_weixin"></span>
                     <span>微信</span>
                   </div>
-                </div>
+                </div> -->
                 <div class="right">
                   <el-button plain @click="toPage('/PC/login?isLogin=false')"
                     >立即注册</el-button

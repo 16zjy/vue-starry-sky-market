@@ -3,33 +3,14 @@ import Router from 'vue-router';
 import NotFound from '@/components/404';
 Vue.use(Router);
 
-// 手机端
-const MB = () => import('@/views/MB/mb');
-import mbRouter from './mb/index';
-
-// 电脑端
 const PC = () => import('@/views/PC/pc');
 import pcRouter from './pc/index';
 
 const routes = [
   {
     path: '/',
-    beforeEnter(to, from, next) {
-      let path;
-      if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
-        console.log('-----这里是移动端-----');
-        path = '/MB';
-      } else {
-        console.log('-----这里是电脑端-----');
-        path = '/PC';
-      }
-      next(path);
-    },
-  },
-  {
-    path: '/MB',
-    component: MB,
-    children: mbRouter,
+    component: PC,
+    children: pcRouter,
   },
   {
     path: '/PC',
