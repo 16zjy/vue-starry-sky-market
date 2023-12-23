@@ -35,28 +35,12 @@
               <el-divider></el-divider>
 
               <div class="footer">
-                <div></div>
-                <!-- <div class="loginSelect">
-                  <div class="logo">
-                    <span class="icon icon_qq"></span>
-                    <span>QQ</span>
-                  </div>
-                  <div style="position: relative; top: 6px">
-                    <el-divider direction="vertical"></el-divider>
-                  </div>
-                  <div class="logo">
-                    <span class="icon icon_weixin"></span>
-                    <span>微信</span>
-                  </div>
-                </div> -->
-                <div class="right">
-                  <el-button plain @click="toPage('/PC/login?isLogin=false')"
-                    >立即注册</el-button
-                  >
+                <div class="right" style="white-space: pre;">
+                  <router-link to="/PC/login?isLogin=false" class="tip-color">没有账号？去注册</router-link>
                 </div>
               </div>
             </div>
-            <div class="form" v-else key="2">
+            <div class="form" v-else key="2" >
               <el-form
                 status-icon
                 ref="regForm"
@@ -66,20 +50,13 @@
                 :rules="rules"
               >
                 <el-form-item label="账号" prop="username">
-                  <el-input
-                    v-model="regForm.username"
-                    prefix-icon="el-icon-user-solid"
-                  ></el-input>
+                  <el-input v-model="regForm.username" prefix-icon="el-icon-user-solid"></el-input>
                 </el-form-item>
+
                 <el-form-item label="密码" prop="password">
-                  <el-input
-                    type="password"
-                    v-model="regForm.password"
-                    autocomplete="off"
-                    show-password
-                    prefix-icon="el-icon-lock"
-                  ></el-input>
+                  <el-input type="password" v-model="regForm.password" autocomplete="off" show-password prefix-icon="el-icon-lock"></el-input>
                 </el-form-item>
+                
                 <el-form-item label="确认" prop="checkPass">
                   <el-input
                     type="password"
@@ -90,14 +67,14 @@
                   ></el-input>
                 </el-form-item>
 
-                <el-form-item>
-                  <el-button type="primary" @click="submitReg('regForm')"
-                    >注册</el-button
-                  >
-                  <el-button @click="toPage('/PC/login?isLogin=true')">
-                    登录</el-button
-                  >
-                </el-form-item>
+                <div class="footer" style="white-space: pre;">
+                  <div class="right" >
+                    <el-form-item>
+                      <router-link to="/PC/login?isLogin=true" class="tip-color">已有账号，去登录&ensp;&ensp;</router-link>
+                      <el-button type="primary" @click="submitReg('regForm')">注册</el-button>
+                  </el-form-item>
+                  </div>
+                </div>
               </el-form>
             </div>
           </div>
@@ -261,6 +238,22 @@ export default {
   right: 300px;
 }
 
+.login_btn {
+  display: flex;
+  justify-content: flex-end;
+}
+.tip-color {
+  color: #708090;
+}
+
+.tip-color:hover {
+  color: red;
+}
+
+.tip-color:active {
+  color: green;
+}
+
 .form {
   padding: 20px 20px;
 }
@@ -281,14 +274,6 @@ export default {
   align-items: center;
 }
 
-.icon {
-  width: 19px;
-  height: 18px;
-  margin: 0 2px;
-  display: inline-block;
-  background: url(//misc.360buyimg.com/user/passport/1.0.0/widget/login-form-2018-0827/i/QQ-weixin.png)
-    no-repeat;
-}
 .icon_qq {
   background-position: 0 0;
 }

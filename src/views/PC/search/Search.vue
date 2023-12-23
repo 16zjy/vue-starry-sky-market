@@ -5,7 +5,7 @@
         <el-col :span="4">
           <router-link to="/PC/">
             <div>
-              <img src="/static/logo.png" alt="" />
+              <img src="/static/logo.png" width="80px" height="80px" alt="" />
             </div>
           </router-link>
         </el-col>
@@ -19,49 +19,15 @@
                     <el-autocomplete
                       v-model="searchData"
                       :fetch-suggestions="querySearch"
-                      placeholder="请输入内容"
+                      placeholder="请输入关键词搜索"
                       :trigger-on-focus="true"
+                      :clearable="true"
                       @select="handleSelect"
                       style="display: block"
                     >
-                      <el-button
-                        slot="append"
-                        icon="el-icon-search"
-                        @click="search()"
-                      ></el-button>
+                      <el-button slot="append" icon="el-icon-search" @click="search()"></el-button>
                     </el-autocomplete>
                   </div>
-                </el-col>
-              </el-row>
-              <el-row
-                :gutter="0"
-                type="flex"
-                justify="space-between"
-                style="margin-top: 4px"
-              >
-                <el-col>
-                  <el-link :underline="false">手机降价</el-link>
-                </el-col>
-                <el-col>
-                  <el-link :underline="false">电脑数码</el-link>
-                </el-col>
-                <el-col>
-                  <el-link :underline="false">电脑促销</el-link>
-                </el-col>
-                <el-col>
-                  <el-link :underline="false">运动大牌</el-link>
-                </el-col>
-                <el-col>
-                  <el-link :underline="false">潮流服装</el-link>
-                </el-col>
-                <el-col>
-                  <el-link :underline="false">居家暖冬</el-link>
-                </el-col>
-                <el-col>
-                  <el-link :underline="false">大雪节气</el-link>
-                </el-col>
-                <el-col>
-                  <el-link :underline="false">家装纸品</el-link>
                 </el-col>
               </el-row>
             </el-col>
@@ -70,23 +36,11 @@
               <router-link to="/PC/cart">
                 <el-badge :value="getCartsLength" :max="99" class="item">
                   <el-button icon="el-icon-shopping-cart-full" size="medium">
-                    我的购物车</el-button
-                  >
+                    我的购物车</el-button>
                 </el-badge>
               </router-link>
             </el-col>
-            <!-- /购物车 -->
           </el-row>
-          <!-- /搜索栏第一行 -->
-          <!-- 搜索栏第二行 -->
-          <el-row class="searchList" :gutter="8">
-            <el-col v-for="(item, index) in lists" :key="index" :span="2">
-              <el-link :underline="false">
-                {{ item }}
-              </el-link>
-            </el-col>
-          </el-row>
-          <!-- /搜索栏第二行 -->
         </el-col>
       </el-row>
     </div>
@@ -100,18 +54,6 @@ export default {
     return {
       searchData: '',
       restaurants: [],
-      lists: [
-        '秒杀',
-        '优惠券',
-        '超级会员',
-        '品牌闪购',
-        '京东拍卖',
-        '京东家电',
-        '京东超市',
-        '京东生鲜',
-        '京东国际',
-        '京东金融',
-      ],
     };
   },
   computed: {
@@ -172,7 +114,7 @@ export default {
 <style scoped>
 #app {
   background-color: #fff;
-  height: 200px;
+  height: 100px;
   box-shadow: 0 4px 4px #ccc;
 }
 

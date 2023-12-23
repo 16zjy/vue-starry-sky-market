@@ -19,6 +19,7 @@
                       :fetch-suggestions="querySearch"
                       placeholder="请输入内容"
                       :trigger-on-focus="true"
+                      :clearable="true"
                       @select="handleSelect"
                       style="display: block"
                     >
@@ -29,37 +30,6 @@
                       ></el-button>
                     </el-autocomplete>
                   </div>
-                </el-col>
-              </el-row>
-              <el-row
-                :gutter="0"
-                type="flex"
-                justify="space-between"
-                style="margin-top: 4px"
-              >
-                <el-col>
-                  <el-link :underline="false">手机降价</el-link>
-                </el-col>
-                <el-col>
-                  <el-link :underline="false">电脑数码</el-link>
-                </el-col>
-                <el-col>
-                  <el-link :underline="false">电脑促销</el-link>
-                </el-col>
-                <el-col>
-                  <el-link :underline="false">运动大牌</el-link>
-                </el-col>
-                <el-col>
-                  <el-link :underline="false">潮流服装</el-link>
-                </el-col>
-                <el-col>
-                  <el-link :underline="false">居家暖冬</el-link>
-                </el-col>
-                <el-col>
-                  <el-link :underline="false">大雪节气</el-link>
-                </el-col>
-                <el-col>
-                  <el-link :underline="false">家装纸品</el-link>
                 </el-col>
               </el-row>
             </el-col>

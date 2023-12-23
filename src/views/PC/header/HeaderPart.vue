@@ -1,12 +1,6 @@
 <template>
   <header id="header">
     <div id="content">
-      <span>
-        <div class="inline-block pointer" @click="toPage('/PC/index')">
-          <i class="el-icon-s-home" style="color: #79bbff"></i>
-          <span style="font-size: 14px">江苏</span>
-        </div>
-      </span>
       <span class="rightLink">
         <template v-if="this.$store.state.userInfo === null">
           <el-link @click="toPage('/PC/login?isLogin=true')" :underline="false"
