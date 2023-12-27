@@ -3,8 +3,10 @@
     <header-part />
     <search />
     <div class="content card" align="center">
+      <category></category>
       <rotation />
       <erect-rotation />
+      <serve />
       <sec-kill />
       <recommend />
     </div>
@@ -20,6 +22,8 @@ import ErectRotation from '@/views/PC/erectRotation/ErectRotation.vue';
 import SecKill from '@/views/PC/secKill/SecKill.vue';
 import Recommend from '@/views/PC/recommend/Recommend.vue';
 import MyFooter from '@/views/PC/footer/MyFooter.vue';
+import Category from '@/views/PC/category/Category';
+import Serve from '@/views/PC/serve/Serve';
 
 export default {
   name: 'Index',
@@ -31,6 +35,8 @@ export default {
     SecKill,
     Recommend,
     MyFooter,
+    Serve,
+    Category,
   },
   beforeCreate() {
     // 加载默认值
