@@ -90,8 +90,9 @@ export default {
       this.$router.push(item);
     },
   },
-  }
+}
 </script>
+
 <style scoped>
 #serve {
   width: 209px;
